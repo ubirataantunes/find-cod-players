@@ -8,6 +8,7 @@ import { useState } from 'react';
 import InputField from '../InputField';
 // import DropdownList from '../DropdownList';
 import Button from '../Button';
+import DropdownList from '../DropdownList';
 
 const Form = (props: any) => {
     // states
@@ -55,12 +56,12 @@ const Form = (props: any) => {
                     value={image}
                     changed={(value: any) => {setImage(value)}}
                 />
-                {/* <DropdownList
+                <DropdownList
                     label='Facção'
                     items={props.teamNames}
                     value={team}
-                    changed={value => setTeam(value)}
-                /> */}
+                    changed={(value: any) => setTeam(value)}
+                />
                 <Button>
                     Criar Card
                 </Button>
