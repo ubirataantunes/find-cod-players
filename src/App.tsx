@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 import Banner from './components/Banner';
+import Footer from './components/Footer/Form';
 import Form from './components/Form';
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
     <div className='App'>
       <Banner />
       <Form registeredPlayers={(player: any) => handleNewPlayer(player)} />
+      <Footer />
     </div>
   );
 }
