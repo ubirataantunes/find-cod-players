@@ -7,6 +7,13 @@
     font-weight: 600;
 }
 
-.banner img {
-    /* max-width: 100%; */
-}
+
+@media only screen and (max-width: 600px) {
+    p {
+      margin-top: -15px;
+    }
+
+    img {
+      max-width: 16rem !important;
+    }
+  }

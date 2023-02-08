@@ -8,61 +8,56 @@ import { useState } from 'react';
 import InputField from '../InputField';
 // import DropdownList from '../DropdownList';
 import Button from '../Button';
+import DropdownList from '../DropdownList';
 
 const Form = (props: any) => {
     // states
     const [name, setName] = useState('');
-    const [job, setJob] = useState('');
-    const [image, setImage] = useState('');
+    const [ID, setID] = useState('');
     const [team, setTeam] = useState('');
 
     const handleSubmit = (e: any) => {
         e.preventDefault();
         // sending professional data to App.js state
-        props.registeredProfessionals({
+        props.registeredPlayers({
             name,
-            job,
-            image,
+            ID,
             team
         });
         setName('');
-        setJob('');
-        setImage('');
+        setID('');
         setTeam('');
     };
 
+    const platform = ['Playstation', 'Xbox', 'Computer']
+
     return (
-        <section className='formulario'>
+        <section className='form'>
             <form onSubmit={handleSubmit}>
-                <h2>Preencha os dados para criar os cards</h2>
+                <h2>fill in the fields to find other players!</h2>
                 <InputField
-                    label='Nome da carta'
-                    placeholder='Digite seu nome'
+                    label='User name'
+                    placeholder='Put your name here'
                     required={true}
                     value={name}
                     changed={(value: any) => {setName(value)}}
                 />
                 <InputField
-                    label='Tipo'
-                    placeholder='Digite seu cargo'
+                    label='ID Activision'
+                    placeholder='Put your ID here'
                     required={true}
-                    value={job}
-                    changed={(value: any) => {setJob(value)}}
+                    value={ID}
+                    changed={(value: any) => {setID(value)}}
                 />
-                <InputField
-                    label='Imagem'
-                    placeholder='Informe o endereço url da imagem'
-                    value={image}
-                    changed={(value: any) => {setImage(value)}}
-                />
-                {/* <DropdownList
-                    label='Facção'
-                    items={props.teamNames}
+                <DropdownList
+                    label='Platform'
+                    platform={platform}
+                    placeHolder="Select your platform"
                     value={team}
-                    changed={value => setTeam(value)}
-                /> */}
+                    changed={(value: any) => setTeam(value)}
+                />
                 <Button>
-                    Criar Card
+                    Register
                 </Button>
             </form>
         </section>
