@@ -57,6 +57,7 @@ const Form = (props: any) => {
           label="Platform"
           platform={platform}
           placeHolder="Select your platform"
+          changed={(value: any) => setTeam(value)}
         />
         <Button>Register</Button>
       </form>
