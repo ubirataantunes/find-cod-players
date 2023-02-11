@@ -1,7 +1,9 @@
 .form {
   display: flex;
   justify-content: center;
-  margin: 25px 0;
+  margin: 0;
+  padding: 15px 0;
+  background-color: black;
 }
 
 .form form {
@@ -13,9 +15,9 @@
 }
 
 @media only screen and (max-width: 600px) {
-  .form {
+  /* .form {
     margin: 20px 0;
-  }
+  } */
 
   h2 {
     text-align: center;
