@@ -81,7 +81,7 @@ const Form = (props: any) => {
           placeHolder="Select your platform"
           changed={(value: any) => setPlatform(value)}
         />
-        <Button>Register</Button>
+        <Button>Find</Button>
       </form>
       {users.map(user => (
         <div key={user.username}>
